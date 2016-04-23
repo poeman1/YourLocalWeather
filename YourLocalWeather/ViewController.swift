@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var weather = Weather(zip: 64804)
+    var weather = Weather(location: 64804)
 
     override func viewDidLoad() {
         super.viewDidLoad()

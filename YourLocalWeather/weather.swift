@@ -11,6 +11,7 @@ import Alamofire
 
 class Weather {
     
+    //main
     private var _currentWeatherMain: String!
     private var _currentWeatherLongDescription: String!
     private var _currentWeatherShortDescription: String!
@@ -35,6 +36,23 @@ class Weather {
     private var _URL_FORCAST: String! = "http://api.openweathermap.org/data/2.5/forecast?"
     private var _URL_LOC: String! = "zip=64801,us"
     private var _URL_APPID: String! = "&units=imperial&APPID=c388210d4502949751d13328f1b7ae3d"
+    
+    //forecast
+    private var _day1Icon: String!
+    private var _day1Description: String!
+    private var _day1Temp: String!
+    private var _day2Icon: String!
+    private var _day2Description: String!
+    private var _day2Temp: String!
+    private var _day3Icon: String!
+    private var _day3Description: String!
+    private var _day3Temp: String!
+    private var _day4Icon: String!
+    private var _day4Description: String!
+    private var _day4Temp: String!
+    private var _day5Icon: String!
+    private var _day5Description: String!
+    private var _day5Temp: String!
     
     
     
@@ -136,12 +154,100 @@ class Weather {
     }
     var locationName: String {
         if _locationName == nil {
-            print("two")
             return ""
         }
         return _locationName
     }
-    
+    var day1Temp: String {
+        if _day1Temp == nil {
+            return ""
+        }
+        return _day1Temp
+    }
+    var day1Description: String {
+        if _day1Description == nil {
+            return ""
+        }
+        return _day1Description
+    }
+    var day1Icon: String {
+        if _day1Icon == nil {
+            return ""
+        }
+        return _day1Icon
+    }
+    var day2Temp: String {
+        if _day2Temp == nil {
+            return ""
+        }
+        return _day2Temp
+    }
+    var day2Description: String {
+        if _day2Description == nil {
+            return ""
+        }
+        return _day2Description
+    }
+    var day2Icon: String {
+        if _day2Icon == nil {
+            return ""
+        }
+        return _day2Icon
+    }
+    var day3Temp: String {
+        if _day3Temp == nil {
+            return ""
+        }
+        return _day3Temp
+    }
+    var day3Description: String {
+        if _day3Description == nil {
+            return ""
+        }
+        return _day3Description
+    }
+    var day3Icon: String {
+        if _day3Icon == nil {
+            return ""
+        }
+        return _day3Icon
+    }
+    var day4Temp: String {
+        if _day4Temp == nil {
+            return ""
+        }
+        return _day4Temp
+    }
+    var day4Description: String {
+        if _day4Description == nil {
+            return ""
+        }
+        return _day4Description
+    }
+    var day4Icon: String {
+        if _day4Icon == nil {
+            return ""
+        }
+        return _day4Icon
+    }
+    var day5Temp: String {
+        if _day5Temp == nil {
+            return ""
+        }
+        return _day5Temp
+    }
+    var day5Description: String {
+        if _day5Description == nil {
+            return ""
+        }
+        return _day5Description
+    }
+    var day5Icon: String {
+        if _day5Icon == nil {
+            return ""
+        }
+        return _day5Icon
+    }
     
     
     init(location: AnyObject) {
@@ -155,7 +261,6 @@ class Weather {
             self._URL_LOC = "q=\(obj)"
         }
         
-        //self._URL_LOC = location as! String
     }
     
     
@@ -262,19 +367,59 @@ class Weather {
                     
                     if let dict = result.value as? Dictionary<String, AnyObject> {
                         
+                        print(dict)
+                        
                         if let forecast = dict["list"] as? [Dictionary<String,AnyObject>] {
-                            print(forecast[7]["main"]!["temp"])
-                            print(forecast[7]["weather"])
-                            print(forecast[15]["main"]!["temp"])
-                            //print(forecast[15]["weather"]!["icon"])
+                            if let temp = forecast[7]["main"]!["temp"] as? Int {
+                                self._day1Temp = "\(temp)\u{00B0}"
+                            }
+                            if let temp = forecast[15]["main"]!["temp"] as? Int {
+                                self._day2Temp = "\(temp)\u{00B0}"
+                            }
+                            if let temp = forecast[23]["main"]!["temp"] as? Int {
+                                self._day3Temp = "\(temp)\u{00B0}"
+                            }
+                            if let temp = forecast[31]["main"]!["temp"] as? Int {
+                                self._day4Temp = "\(temp)\u{00B0}"
+                            }
+                            if let temp = forecast[38]["main"]!["temp"] as? Int {
+                                self._day5Temp = "\(temp)\u{00B0}"
+                            }
+
+                            if let weather = forecast[7]["weather"] as? [Dictionary<String,AnyObject>] {
+                                self._day1Icon = weather[0]["icon"] as! String
+                                self._day1Description = weather[0]["main"] as! String
+                            }
+                            
+                            if let weather = forecast[15]["weather"] as? [Dictionary<String,AnyObject>] {
+                                self._day2Icon = weather[0]["icon"] as! String
+                                self._day2Description = weather[0]["main"] as! String
+                            }
+                            
+                            if let weather = forecast[23]["weather"] as? [Dictionary<String,AnyObject>] {
+                                self._day3Icon = weather[0]["icon"] as! String
+                                self._day3Description = weather[0]["main"] as! String
+                            }
+                            if let weather = forecast[31]["weather"] as? [Dictionary<String,AnyObject>] {
+                                self._day4Icon = weather[0]["icon"] as! String
+                                self._day4Description = weather[0]["main"] as! String
+                            }
+                            if let weather = forecast[38]["weather"] as? [Dictionary<String,AnyObject>] {
+                                self._day5Icon = weather[0]["icon"] as! String
+                                self._day5Description = weather[0]["main"] as! String
+                                completed()
+                            }
+                            
+                            
                         }
-                        print(dict["list"])
+                        
                         
                     } else {
                         print("Wrong")
                     }
+                    
                 }
-                completed()
+                
             }
             
         }

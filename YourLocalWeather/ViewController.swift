@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITextFieldDelegate {
     
     var weather = Weather(location: 95015)
-    var forecast = Forcast()
+    //var forecast = Forcast()
     
     
     @IBOutlet weak var mainWeatherIcon: UIImageView!
@@ -26,6 +26,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var tempGuageImage: UIImageView!
     @IBOutlet weak var shortDescriptionLabel: UILabel!
     @IBOutlet weak var locationInputText: UITextField!
+    @IBOutlet weak var forecastDayOneIcon: UIImageView!
+    @IBOutlet weak var forecastDayOneTempLabel: UILabel!
+    @IBOutlet weak var forecastDayOneDescLabel: UILabel!
+    @IBOutlet weak var forecastDayTwoIcon: UIImageView!
+    @IBOutlet weak var forecastDayTwoTempLabel: UILabel!
+    @IBOutlet weak var forecastDayTwoDescLabel: UILabel!
+    @IBOutlet weak var forecastDayThreeIcon: UIImageView!
+    @IBOutlet weak var forecastDayThreeTempLabel: UILabel!
+    @IBOutlet weak var forecastDayThreeDescLabel: UILabel!
+    
+    @IBOutlet weak var forecastDayFourIcon: UIImageView!
+    @IBOutlet weak var forecastDayFourTempLabel: UILabel!
+    @IBOutlet weak var forecastDayFourDescLabel: UILabel!
+    
+    @IBOutlet weak var forecastDayFiveIcon: UIImageView!
+    @IBOutlet weak var forecastDayFiveTempLabel: UILabel!
+    @IBOutlet weak var forecastDayFiveDescLabel: UILabel!
 
     
     
@@ -54,9 +71,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
             } else {
                 self.tempGuageImage.image = UIImage(named: "highTemp")
             }
-            self.forecast.downloadForecast { () -> () in
-                
-            }
+            print("view loading")
+            self.forecastDayOneIcon.image = UIImage(named: "\(self.weather.day1Icon)")
+            self.forecastDayOneTempLabel.text = self.weather.day1Temp
+            self.forecastDayOneDescLabel.text = self.weather.day1Description
+            self.forecastDayTwoIcon.image = UIImage(named: "\(self.weather.day2Icon)")
+            self.forecastDayTwoTempLabel.text = self.weather.day2Temp
+            self.forecastDayTwoDescLabel.text = self.weather.day2Description
+            self.forecastDayThreeIcon.image = UIImage(named: "\(self.weather.day3Icon)")
+            self.forecastDayThreeTempLabel.text = self.weather.day3Temp
+            self.forecastDayThreeDescLabel.text = self.weather.day3Description
+            self.forecastDayFourIcon.image = UIImage(named: "\(self.weather.day4Icon)")
+            self.forecastDayFourTempLabel.text = self.weather.day4Temp
+            self.forecastDayFourDescLabel.text = self.weather.day4Description
+            self.forecastDayFiveIcon.image = UIImage(named: "\(self.weather.day5Icon)")
+            self.forecastDayFiveTempLabel.text = self.weather.day5Temp
+            self.forecastDayFiveDescLabel.text = self.weather.day5Description
 
             
         }

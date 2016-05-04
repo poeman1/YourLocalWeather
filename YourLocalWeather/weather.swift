@@ -367,52 +367,82 @@ class Weather {
                     
                     if let dict = result.value as? Dictionary<String, AnyObject> {
                         
-                        print(dict)
+                        //print(dict)
                         
                         if let forecast = dict["list"] as? [Dictionary<String,AnyObject>] {
-                            if let temp = forecast[7]["main"]!["temp"] as? Int {
-                                self._day1Temp = "\(temp)\u{00B0}"
+
+                            var temps: [Int] = []
+                            var icons: [String] = []
+                            var days: [String] = []
+                            
+                            for var x in 0...forecast.count - 1 {
+                                if let forecastDate = forecast[x]["dt"] as? Double {
+                                    let date = NSDate(timeIntervalSince1970: forecastDate)
+                                    let dayFormatter = NSDateFormatter()
+                                    let dateFormatter = NSDateFormatter()
+                                    let timeFormatter = NSDateFormatter()
+                                    dayFormatter.dateFormat = "EEE"
+                                    dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
+                                    timeFormatter.dateFormat = "h:mm a"
+//                                    print(dayFormatter.stringFromDate(date))
+//                                    print(dateFormatter.stringFromDate(date))
+//                                    print(timeFormatter.stringFromDate(date))
+                                    if timeFormatter.stringFromDate(date) == "4:00 PM" {
+                                        if let temp = forecast[x]["main"]!["temp_max"] {
+                                            temps.append((temp as? Int)! )
+                                        }
+                                        days.append(dayFormatter.stringFromDate(date))
+                                        
+                                        
+                                        if let weather = forecast[x]["weather"] as? [Dictionary<String, AnyObject>] {
+                                            if let icon = weather[0]["icon"] {
+                                                icons.append(icon as! String)
+                                            }
+                                        }
+                                        
+                                        print(days)
+                                        print(temps)
+                                        print(icons)
+                                        
+                                        
+                                        
+
+                                    }
+                                    
+                                    
+
+                                }
                             }
-                            if let temp = forecast[15]["main"]!["temp"] as? Int {
-                                self._day2Temp = "\(temp)\u{00B0}"
+                            if temps[0] != 0 {
+                                self._day1Temp = "\(temps[0])"
+                                self._day1Description = days[0]
+                                self._day1Icon = icons[0]
                             }
-                            if let temp = forecast[23]["main"]!["temp"] as? Int {
-                                self._day3Temp = "\(temp)\u{00B0}"
+                            if temps[1] != 0 {
+                                self._day2Temp = "\(temps[1])"
+                                self._day2Description = days[1]
+                                self._day2Icon = icons[1]
                             }
-                            if let temp = forecast[31]["main"]!["temp"] as? Int {
-                                self._day4Temp = "\(temp)\u{00B0}"
+                            if temps[2] != 0 {
+                                self._day3Temp = "\(temps[2])"
+                                self._day3Description = days[2]
+                                self._day3Icon = icons[2]
                             }
-                            if let temp = forecast[38]["main"]!["temp"] as? Int {
-                                self._day5Temp = "\(temp)\u{00B0}"
+                            if temps[3] != 0 {
+                                self._day4Temp = "\(temps[3])"
+                                self._day4Description = days[3]
+                                self._day4Icon = icons[3]
+                            }
+                            if temps[4] != 0 {
+                                self._day5Temp = "\(temps[4])"
+                                self._day5Description = days[4]
+                                self._day5Icon = icons[4]
+                                
                             }
 
-                            if let weather = forecast[7]["weather"] as? [Dictionary<String,AnyObject>] {
-                                self._day1Icon = weather[0]["icon"] as! String
-                                self._day1Description = weather[0]["main"] as! String
-                            }
-                            
-                            if let weather = forecast[15]["weather"] as? [Dictionary<String,AnyObject>] {
-                                self._day2Icon = weather[0]["icon"] as! String
-                                self._day2Description = weather[0]["main"] as! String
-                            }
-                            
-                            if let weather = forecast[23]["weather"] as? [Dictionary<String,AnyObject>] {
-                                self._day3Icon = weather[0]["icon"] as! String
-                                self._day3Description = weather[0]["main"] as! String
-                            }
-                            if let weather = forecast[31]["weather"] as? [Dictionary<String,AnyObject>] {
-                                self._day4Icon = weather[0]["icon"] as! String
-                                self._day4Description = weather[0]["main"] as! String
-                            }
-                            if let weather = forecast[38]["weather"] as? [Dictionary<String,AnyObject>] {
-                                self._day5Icon = weather[0]["icon"] as! String
-                                self._day5Description = weather[0]["main"] as! String
-                                completed()
-                            }
-                            
-                            
-                        }
                         
+                        }
+                        completed()
                         
                     } else {
                         print("Wrong")

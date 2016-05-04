@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
+    var locationManager = CLLocationManager()
     var weather = Weather(location: 95015)
-    //var forecast = Forcast()
     
     
+    
+    @IBOutlet weak var upperBG: UIImageView!
+    @IBOutlet weak var lowerBG: UIImageView!
     @IBOutlet weak var mainWeatherIcon: UIImageView!
     @IBOutlet weak var locationNameLabel: UILabel!
     @IBOutlet weak var currentTempLabel: UILabel!
@@ -51,6 +55,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         locationInputText.delegate = self
         weather.downloadWeather { () -> () in
             
@@ -87,7 +94,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.forecastDayFiveIcon.image = UIImage(named: "\(self.weather.day5Icon)")
             self.forecastDayFiveTempLabel.text = self.weather.day5Temp
             self.forecastDayFiveDescLabel.text = self.weather.day5Description
-
+    
             
         }
         
@@ -108,6 +115,36 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        //print(locations)
+        
+        let userLocation: CLLocation = locations[0]
+    
+        
+        CLGeocoder().reverseGeocodeLocation(userLocation) { (placemarks, error) -> Void in
+            if error != nil {
+                print("Reverse geocoder failed with error" + error!.localizedDescription)
+                return
+            }
+            
+            if placemarks!.count > 0 {
+                let pm = CLPlacemark(placemark: placemarks![0] )
+                print(pm)
+                if pm.locality != nil {
+                    self.weather = Weather(location: pm.locality!)
+                    self.viewDidLoad()
+                }
+                
+                
+            }
+            else {
+                print("Problem with the data received from geocoder")
+            }
+        }
+        
+        
+    }
     
     
     

@@ -17,16 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudyBG" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-gE-m7c">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="niceWeather" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-gE-m7c">
                                 <rect key="frame" x="0.0" y="478" width="600" height="120"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="5nR-Z6-7ct"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloudyBG" translatesAutoresizingMaskIntoConstraints="NO" id="rFZ-Bf-4kt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="niceWeather" translatesAutoresizingMaskIntoConstraints="NO" id="rFZ-Bf-4kt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="478"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City / Area Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vNg-zQ-YGa">
                                 <rect key="frame" x="190" y="28" width="220" height="30"/>
@@ -157,8 +155,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-R6-w4m">
-                                <rect key="frame" x="20" y="500" width="560" height="80"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-R6-w4m">
+                                <rect key="frame" x="20" y="500" width="560" height="79"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalCentering" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="qmi-yM-siZ">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="42"/>
@@ -193,7 +191,7 @@
                                                     <constraint firstAttribute="width" constant="42" id="b9O-Ex-A8B"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPQ-vB-abg">
@@ -202,7 +200,7 @@
                                                     <constraint firstAttribute="width" constant="42" id="noe-jt-akD"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v65-Z2-VMR">
@@ -211,7 +209,7 @@
                                                     <constraint firstAttribute="width" constant="42" id="Gzg-l9-Byo"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="72" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4L-nm-Ch2">
@@ -220,7 +218,7 @@
                                                     <constraint firstAttribute="width" constant="42" id="Bmu-Ue-jD2"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="73" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ab-57-r0A">
@@ -229,57 +227,57 @@
                                                     <constraint firstAttribute="width" constant="42" id="RoE-Hl-eYW"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4rD-id-i6w">
-                                        <rect key="frame" x="0.0" y="63" width="560" height="17"/>
+                                        <rect key="frame" x="0.0" y="63" width="560" height="16"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kc-Z0-AVv">
-                                                <rect key="frame" x="0.0" y="0.0" width="42" height="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="42" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="4oY-Lc-2pM"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aI3-o5-bi6">
-                                                <rect key="frame" x="130" y="0.0" width="42" height="17"/>
+                                                <rect key="frame" x="130" y="0.0" width="42" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="QJX-gm-ROp"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrS-dy-J2g" userLabel="day3">
-                                                <rect key="frame" x="259" y="0.0" width="42" height="17"/>
+                                                <rect key="frame" x="259" y="0.0" width="42" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="R6Z-pA-DvF"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVt-Gg-tAE">
-                                                <rect key="frame" x="389" y="0.0" width="42" height="17"/>
+                                                <rect key="frame" x="389" y="0.0" width="42" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="5Mn-9v-Tp1"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAW-hs-IjS">
-                                                <rect key="frame" x="518" y="0.0" width="42" height="17"/>
+                                                <rect key="frame" x="518" y="0.0" width="42" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="4SW-oA-Do4"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="13"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="12"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -374,11 +372,13 @@
                         <outlet property="locationInputText" destination="vNg-zQ-YGa" id="46o-YL-Nlr"/>
                         <outlet property="locationNameLabel" destination="7JK-MA-g6e" id="3tL-dQ-si8"/>
                         <outlet property="longDescriptionLabel" destination="uhC-yk-ghw" id="cSd-Mw-kzJ"/>
+                        <outlet property="lowerBG" destination="c6m-gE-m7c" id="Bi7-9e-9ly"/>
                         <outlet property="mainWeatherIcon" destination="hwC-l7-v95" id="bLL-7W-DM0"/>
                         <outlet property="shortDescriptionLabel" destination="BKu-Xt-rUw" id="Rfl-rC-e3t"/>
                         <outlet property="sunriseLabel" destination="xBq-aJ-Dpi" id="daY-JY-cNT"/>
                         <outlet property="sunsetLabel" destination="43t-vC-4uk" id="ISZ-JT-kcf"/>
                         <outlet property="tempGuageImage" destination="7Se-GK-m3Z" id="abB-eh-iz9"/>
+                        <outlet property="upperBG" destination="rFZ-Bf-4kt" id="HId-mN-g9r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -392,8 +392,8 @@
         <image name="03d" width="700" height="700"/>
         <image name="04d" width="700" height="700"/>
         <image name="10d" width="700" height="700"/>
-        <image name="cloudyBG" width="2448" height="3264"/>
         <image name="lowTemp" width="700" height="700"/>
+        <image name="niceWeather" width="3024" height="4032"/>
         <image name="nightLightningCloud" width="700" height="700"/>
     </resources>
 </document>

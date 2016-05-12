@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		70177616DEC5CD3339CD96D2 /* Pods_YourLocalWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7AD6316CFCA4EDECCB9C777 /* Pods_YourLocalWeather.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		B0322D521CDE9DF700E3F735 /* customUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0322D511CDE9DF700E3F735 /* customUILabel.swift */; };
 		B0334CD41CC9AB0500181CAE /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0334CD31CC9AB0500181CAE /* weather.swift */; };
 		B0334CD61CC9B70D00181CAE /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0334CD51CC9B70D00181CAE /* constants.swift */; };
 		B0689B091CC6F17900772EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0689B081CC6F17900772EE8 /* AppDelegate.swift */; };
@@ -16,10 +17,12 @@
 		B0689B111CC6F17900772EE8 /* YourLocalWeather.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0689B0F1CC6F17900772EE8 /* YourLocalWeather.xcdatamodeld */; };
 		B0689B131CC6F17900772EE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0689B121CC6F17900772EE8 /* Assets.xcassets */; };
 		B0689B161CC6F17900772EE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0689B141CC6F17900772EE8 /* LaunchScreen.storyboard */; };
+		B0C89E851CDE8B8300D3E660 /* customUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C89E841CDE8B8300D3E660 /* customUITextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6D3B83DE39EC7E1F57C30250 /* Pods-YourLocalWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourLocalWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-YourLocalWeather/Pods-YourLocalWeather.release.xcconfig"; sourceTree = "<group>"; };
+		B0322D511CDE9DF700E3F735 /* customUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customUILabel.swift; sourceTree = "<group>"; };
 		B0334CD31CC9AB0500181CAE /* weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weather.swift; sourceTree = "<group>"; };
 		B0334CD51CC9B70D00181CAE /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		B0689B051CC6F17900772EE8 /* YourLocalWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourLocalWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,6 +33,7 @@
 		B0689B121CC6F17900772EE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0689B151CC6F17900772EE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0689B171CC6F17900772EE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0C89E841CDE8B8300D3E660 /* customUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customUITextField.swift; sourceTree = "<group>"; };
 		D7AD6316CFCA4EDECCB9C777 /* Pods_YourLocalWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YourLocalWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E148B1866B05E21C1BC73DA8 /* Pods-YourLocalWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourLocalWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YourLocalWeather/Pods-YourLocalWeather.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +88,7 @@
 		B0689B071CC6F17900772EE8 /* YourLocalWeather */ = {
 			isa = PBXGroup;
 			children = (
+				B0C89E831CDE8AF500D3E660 /* Utils */,
 				B0689B081CC6F17900772EE8 /* AppDelegate.swift */,
 				B0689B1D1CC6F23400772EE8 /* Controllers */,
 				B0689B0C1CC6F17900772EE8 /* Main.storyboard */,
@@ -91,8 +96,6 @@
 				B0689B141CC6F17900772EE8 /* LaunchScreen.storyboard */,
 				B0689B171CC6F17900772EE8 /* Info.plist */,
 				B0689B0F1CC6F17900772EE8 /* YourLocalWeather.xcdatamodeld */,
-				B0334CD31CC9AB0500181CAE /* weather.swift */,
-				B0334CD51CC9B70D00181CAE /* constants.swift */,
 			);
 			path = YourLocalWeather;
 			sourceTree = "<group>";
@@ -103,6 +106,17 @@
 				B0689B0A1CC6F17900772EE8 /* ViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B0C89E831CDE8AF500D3E660 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B0334CD31CC9AB0500181CAE /* weather.swift */,
+				B0334CD51CC9B70D00181CAE /* constants.swift */,
+				B0C89E841CDE8B8300D3E660 /* customUITextField.swift */,
+				B0322D511CDE9DF700E3F735 /* customUILabel.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +159,7 @@
 				};
 			};
 			buildConfigurationList = B0689B001CC6F17900772EE8 /* Build configuration list for PBXProject "YourLocalWeather" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -228,6 +242,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C89E851CDE8B8300D3E660 /* customUITextField.swift in Sources */,
+				B0322D521CDE9DF700E3F735 /* customUILabel.swift in Sources */,
 				B0334CD41CC9AB0500181CAE /* weather.swift in Sources */,
 				B0689B0B1CC6F17900772EE8 /* ViewController.swift in Sources */,
 				B0689B091CC6F17900772EE8 /* AppDelegate.swift in Sources */,
@@ -350,6 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = YourLocalWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -366,6 +383,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
 				INFOPLIST_FILE = YourLocalWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

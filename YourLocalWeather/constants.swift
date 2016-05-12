@@ -11,3 +11,4 @@ import Foundation
 
 typealias DownloadComplete = () -> ()
 
+let ICON_URL: String = "http://openweathermap.org/img/w/"

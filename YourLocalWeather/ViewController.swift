@@ -8,11 +8,12 @@
 
 import UIKit
 import MapKit
+import Alamofire
 
 class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var locationManager = CLLocationManager()
-    var weather = Weather(location: 95015)
+    var weather: Weather = Weather(location: 95015)
     
     
     
@@ -57,8 +58,9 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationInputText.delegate = self
+        
         weather.downloadWeather { () -> () in
             
             self.mainWeatherIcon.image = UIImage(named: "\(self.weather.weatherIconID)")
@@ -78,23 +80,30 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
             } else {
                 self.tempGuageImage.image = UIImage(named: "highTemp")
             }
-            print("view loading")
-            self.forecastDayOneIcon.image = UIImage(named: "\(self.weather.day1Icon)")
+            
             self.forecastDayOneTempLabel.text = self.weather.day1Temp
             self.forecastDayOneDescLabel.text = self.weather.day1Description
-            self.forecastDayTwoIcon.image = UIImage(named: "\(self.weather.day2Icon)")
+            
             self.forecastDayTwoTempLabel.text = self.weather.day2Temp
             self.forecastDayTwoDescLabel.text = self.weather.day2Description
-            self.forecastDayThreeIcon.image = UIImage(named: "\(self.weather.day3Icon)")
+            
             self.forecastDayThreeTempLabel.text = self.weather.day3Temp
             self.forecastDayThreeDescLabel.text = self.weather.day3Description
-            self.forecastDayFourIcon.image = UIImage(named: "\(self.weather.day4Icon)")
+            
             self.forecastDayFourTempLabel.text = self.weather.day4Temp
             self.forecastDayFourDescLabel.text = self.weather.day4Description
-            self.forecastDayFiveIcon.image = UIImage(named: "\(self.weather.day5Icon)")
+            
             self.forecastDayFiveTempLabel.text = self.weather.day5Temp
             self.forecastDayFiveDescLabel.text = self.weather.day5Description
-    
+            
+            self.getForecast { () -> () in
+                self.forecastDayOneIcon.image = self.weather.day1IconImage
+                self.forecastDayTwoIcon.image = self.weather.day2IconImage
+                self.forecastDayThreeIcon.image = self.weather.day3IconImage
+                self.forecastDayFourIcon.image = self.weather.day4IconImage
+                self.forecastDayFiveIcon.image = self.weather.day5IconImage
+            }
+            self.selectBG()
             
         }
         
@@ -112,43 +121,62 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         }
         
         self.view.endEditing(true)
+        locationInputText.text = nil
         return true
     }
     
+        
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-        //print(locations)
-        
-        let userLocation: CLLocation = locations[0]
-    
-        
-        CLGeocoder().reverseGeocodeLocation(userLocation) { (placemarks, error) -> Void in
-            if error != nil {
-                print("Reverse geocoder failed with error" + error!.localizedDescription)
-                return
-            }
             
-            if placemarks!.count > 0 {
-                let pm = CLPlacemark(placemark: placemarks![0] )
-                print(pm)
-                if pm.locality != nil {
-                    self.weather = Weather(location: pm.locality!)
-                    self.viewDidLoad()
+            
+        let userLocation: CLLocation = locations[0]
+            
+            
+        CLGeocoder().reverseGeocodeLocation(userLocation) { (placemarks, error) -> Void in
+                if error != nil {
+                    print("Reverse geocoder failed with error" + error!.localizedDescription)
+                    return
                 }
                 
-                
+                if placemarks!.count > 0 {
+                    let pm = CLPlacemark(placemark: placemarks![0] )
+                    if pm.postalCode != nil {
+                        self.weather = Weather(location: pm.postalCode!)
+                    }
+                    
+                    
+                } else {
+                    print("Problem with the data received from geocoder")
+                }
             }
-            else {
-                print("Problem with the data received from geocoder")
-            }
-        }
+            self.locationManager.stopUpdatingLocation()
+            
+            
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        locationManager.startUpdatingLocation()
+    }
+    
+    func selectBG() {
+        let icon = weather.weatherIconID
+        upperBG.image = UIImage(named: "\(icon)BG")
+        //lowerBG.image = UIImage(named: "\(icon)BG")
         
+    }
+    func getForecast(completed: DownloadComplete) {
         
+        weather.getForcastIcon(self.weather.day1Icon, day: "one")
+        weather.getForcastIcon(self.weather.day2Icon, day: "two")
+        weather.getForcastIcon(self.weather.day3Icon, day: "three")
+        weather.getForcastIcon(self.weather.day4Icon, day: "four")
+        weather.getForcastIcon(self.weather.day5Icon, day: "five")
+        
+        completed()
+        viewDidLoad()
     }
     
     
     
-
-
 }
 

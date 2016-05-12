@@ -41,18 +41,23 @@ class Weather {
     private var _day1Icon: String!
     private var _day1Description: String!
     private var _day1Temp: String!
+    private var _day1IconImage: UIImage!
     private var _day2Icon: String!
     private var _day2Description: String!
     private var _day2Temp: String!
+    private var _day2IconImage: UIImage!
     private var _day3Icon: String!
     private var _day3Description: String!
     private var _day3Temp: String!
+    private var _day3IconImage: UIImage!
     private var _day4Icon: String!
     private var _day4Description: String!
     private var _day4Temp: String!
+    private var _day4IconImage: UIImage!
     private var _day5Icon: String!
     private var _day5Description: String!
     private var _day5Temp: String!
+    private var _day5IconImage: UIImage!
     
     
     
@@ -176,6 +181,12 @@ class Weather {
         }
         return _day1Icon
     }
+    var day1IconImage: UIImage {
+        if _day1IconImage == nil {
+            return UIImage(named: "default")!
+        }
+        return _day1IconImage
+    }
     var day2Temp: String {
         if _day2Temp == nil {
             return ""
@@ -194,6 +205,13 @@ class Weather {
         }
         return _day2Icon
     }
+    var day2IconImage: UIImage {
+        if _day2IconImage == nil {
+            return UIImage(named: "default")!
+        }
+        return _day2IconImage
+    }
+
     var day3Temp: String {
         if _day3Temp == nil {
             return ""
@@ -212,6 +230,13 @@ class Weather {
         }
         return _day3Icon
     }
+    var day3IconImage: UIImage {
+        if _day3IconImage == nil {
+            return UIImage(named: "default")!
+        }
+        return _day3IconImage
+    }
+
     var day4Temp: String {
         if _day4Temp == nil {
             return ""
@@ -230,6 +255,13 @@ class Weather {
         }
         return _day4Icon
     }
+    var day4IconImage: UIImage {
+        if _day4IconImage == nil {
+            return UIImage(named: "default")!
+        }
+        return _day4IconImage
+    }
+
     var day5Temp: String {
         if _day5Temp == nil {
             return ""
@@ -248,6 +280,13 @@ class Weather {
         }
         return _day5Icon
     }
+    var day5IconImage: UIImage {
+        if _day5IconImage == nil {
+            return UIImage(named: "default")!
+        }
+        return _day5IconImage
+    }
+
     
     
     init(location: AnyObject) {
@@ -307,7 +346,8 @@ class Weather {
                         self._currentWeatherCodeDescription = intCode
                     } else if let intCode = code as? String {
                         self._currentWeatherCodeDescription = Int(intCode)
-                    } else if let intCode = code as? AnyObject {
+                    } else {
+                        let intCode = code
                         self._currentWeatherCodeDescription = Int(intCode as! String)
                     }
                     
@@ -360,22 +400,21 @@ class Weather {
                 
                 
                 }
-                //print(dict)
+                
                 let furl = "\(self._URL_FORCAST)\(self._URL_LOC)\(self._URL_APPID)"
                 Alamofire.request(.GET, furl).responseJSON { response in
                     let result = response.result
                     
                     if let dict = result.value as? Dictionary<String, AnyObject> {
                         
-                        //print(dict)
-                        
                         if let forecast = dict["list"] as? [Dictionary<String,AnyObject>] {
+
 
                             var temps: [Int] = []
                             var icons: [String] = []
                             var days: [String] = []
                             
-                            for var x in 0...forecast.count - 1 {
+                            for x in 0...forecast.count - 1 {
                                 if let forecastDate = forecast[x]["dt"] as? Double {
                                     let date = NSDate(timeIntervalSince1970: forecastDate)
                                     let dayFormatter = NSDateFormatter()
@@ -384,9 +423,7 @@ class Weather {
                                     dayFormatter.dateFormat = "EEE"
                                     dateFormatter.dateStyle = NSDateFormatterStyle.LongStyle
                                     timeFormatter.dateFormat = "h:mm a"
-//                                    print(dayFormatter.stringFromDate(date))
-//                                    print(dateFormatter.stringFromDate(date))
-//                                    print(timeFormatter.stringFromDate(date))
+
                                     if timeFormatter.stringFromDate(date) == "4:00 PM" {
                                         if let temp = forecast[x]["main"]!["temp_max"] {
                                             temps.append((temp as? Int)! )
@@ -399,50 +436,48 @@ class Weather {
                                                 icons.append(icon as! String)
                                             }
                                         }
-                                        
-                                        print(days)
-                                        print(temps)
-                                        print(icons)
-                                        
-                                        
-                                        
 
                                     }
-                                    
-                                    
 
                                 }
                             }
-                            if temps[0] != 0 {
+                            if temps.count > 0 && days.count > 0 && icons.count > 0 {
                                 self._day1Temp = "\(temps[0])"
                                 self._day1Description = days[0]
                                 self._day1Icon = icons[0]
-                            }
-                            if temps[1] != 0 {
+                                                            }
+                            if temps.count > 1 && days.count > 1 && icons.count > 1 {
                                 self._day2Temp = "\(temps[1])"
                                 self._day2Description = days[1]
                                 self._day2Icon = icons[1]
+                                
                             }
-                            if temps[2] != 0 {
+                            if temps.count > 2 && days.count > 2 && icons.count > 2 {
                                 self._day3Temp = "\(temps[2])"
                                 self._day3Description = days[2]
                                 self._day3Icon = icons[2]
+                                
                             }
-                            if temps[3] != 0 {
+                            if temps.count > 3 && days.count > 3 && icons.count > 3 {
                                 self._day4Temp = "\(temps[3])"
                                 self._day4Description = days[3]
                                 self._day4Icon = icons[3]
+                                
                             }
-                            if temps[4] != 0 {
+                            if temps.count > 4 && days.count > 4 && icons.count > 4 {
                                 self._day5Temp = "\(temps[4])"
                                 self._day5Description = days[4]
                                 self._day5Icon = icons[4]
                                 
+                                
+                                
                             }
+                            completed()
 
                         
                         }
-                        completed()
+                        
+                        
                         
                     } else {
                         print("Wrong")
@@ -450,10 +485,36 @@ class Weather {
                     
                 }
                 
+                
+                
             }
             
         }
         
+        
     }
+    func getForcastIcon(icon: String,day: String) {
+        let url = "\(ICON_URL)\(icon).png"
+        Alamofire.request(.GET, url).responseData{ (response) in
+            if let result = response.data {
+                if day == "one" {
+                    self._day1IconImage = UIImage(data: result)
+                } else if day == "two" {
+                    self._day2IconImage = UIImage(data: result)
+                } else if day == "three" {
+                    self._day3IconImage = UIImage(data: result)
+                } else if day == "four" {
+                    self._day4IconImage = UIImage(data: result)
+                } else {
+                    self._day5IconImage = UIImage(data: result)
+                }
+            }
+            
+        }
+        
+        
+        
+    }
+    
 
 }

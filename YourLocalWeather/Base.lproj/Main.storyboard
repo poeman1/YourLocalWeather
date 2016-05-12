@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -17,16 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="niceWeather" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-gE-m7c">
-                                <rect key="frame" x="0.0" y="478" width="600" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="5nR-Z6-7ct"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="niceWeather" translatesAutoresizingMaskIntoConstraints="NO" id="rFZ-Bf-4kt">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="478"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City / Area Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vNg-zQ-YGa">
+                            <textField opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter City or Area Code" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vNg-zQ-YGa" customClass="customUITextField" customModule="YourLocalWeather" customModuleProvider="target">
                                 <rect key="frame" x="190" y="28" width="220" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="E9f-w7-6xw"/>
@@ -36,129 +30,121 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lowTemp" translatesAutoresizingMaskIntoConstraints="NO" id="7Se-GK-m3Z">
-                                <rect key="frame" x="455" y="89" width="94" height="94"/>
+                                <rect key="frame" x="444" y="89" width="94" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="9sq-aL-5XI"/>
                                     <constraint firstAttribute="height" constant="94" id="BKD-RY-5mz"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joplin, Mo 64801" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JK-MA-g6e">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joplin, Mo 64801" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JK-MA-g6e" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="66" width="560" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="u0i-cW-NMR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="22"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="72" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebE-3t-B1I">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="72" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="45" translatesAutoresizingMaskIntoConstraints="NO" id="ebE-3t-B1I" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                 <rect key="frame" x="506" y="82" width="94" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="94" id="LJz-wt-uOI"/>
                                     <constraint firstAttribute="width" constant="94" id="z1L-mX-HIN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="48"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhC-yk-ghw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhC-yk-ghw" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                 <rect key="frame" x="190" y="121" width="220" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="EYz-mD-mk1"/>
                                     <constraint firstAttribute="height" constant="21" id="yCk-w8-lDU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msi-1z-STx">
-                                <rect key="frame" x="20" y="449" width="58" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunrise" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msi-1z-STx" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="460" width="50" height="13"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="R9r-L5-9bJ"/>
-                                    <constraint firstAttribute="width" constant="58" id="ZIW-ay-L9R"/>
+                                    <constraint firstAttribute="width" constant="50" id="8Vb-1Q-MBN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-pT-PE6">
-                                <rect key="frame" x="526" y="449" width="54" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunset" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yyg-pT-PE6" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
+                                <rect key="frame" x="530" y="460" width="50" height="13"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="54" id="7wx-Jo-fKi"/>
-                                    <constraint firstAttribute="height" constant="21" id="UfB-CL-Wbe"/>
+                                    <constraint firstAttribute="width" constant="50" id="tr7-dB-J2K"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBq-aJ-Dpi">
-                                <rect key="frame" x="20" y="425" width="23" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="3pp-xp-Jve"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBq-aJ-Dpi" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="428" width="26" height="34"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnK-jy-IRx">
-                                <rect key="frame" x="20" y="140" width="23" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="HRV-iw-mSz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43t-vC-4uk" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
+                                <rect key="frame" x="554" y="428" width="26" height="34"/>
+                                <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAv-al-7dL">
-                                <rect key="frame" x="20" y="154" width="19" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnK-jy-IRx" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="140" width="85" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="yUD-9M-d5R"/>
+                                    <constraint firstAttribute="width" constant="85" id="ZgX-M8-4Om"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tub-NG-eZQ">
-                                <rect key="frame" x="20" y="170" width="24" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oAv-al-7dL" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="154" width="85" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="6uk-x5-Fww"/>
+                                    <constraint firstAttribute="width" constant="85" id="9Au-lD-WLU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43t-vC-4uk">
-                                <rect key="frame" x="557" y="425" width="23" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tub-NG-eZQ" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="170" width="85" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="o3I-vb-8Gv"/>
+                                    <constraint firstAttribute="width" constant="85" id="zOj-J8-zhZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KhmerSangamMN" family="Khmer Sangam MN" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suo-Qg-cJB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suo-Qg-cJB" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="121" width="108" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="108" id="UjT-4e-DW1"/>
                                     <constraint firstAttribute="height" constant="21" id="an5-7z-B7b"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Farah" family="Farah" pointSize="12"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKu-Xt-rUw">
-                                <rect key="frame" x="527" y="158" width="52" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKu-Xt-rUw" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
+                                <rect key="frame" x="533" y="158" width="46" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="8Pf-CL-EcX"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-R6-w4m">
-                                <rect key="frame" x="20" y="500" width="560" height="79"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-R6-w4m">
+                                <rect key="frame" x="20" y="501" width="560" height="79"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalCentering" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="qmi-yM-siZ">
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="qmi-yM-siZ">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="42"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="2s0-PE-Gi1">
@@ -169,23 +155,23 @@
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02d" translatesAutoresizingMaskIntoConstraints="NO" id="n61-5S-QAe">
-                                                <rect key="frame" x="51" y="0.0" width="199" height="42"/>
+                                                <rect key="frame" x="42" y="0.0" width="217" height="42"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="03d" translatesAutoresizingMaskIntoConstraints="NO" id="uNX-K4-qrq">
                                                 <rect key="frame" x="259" y="0.0" width="42" height="42"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="04d" translatesAutoresizingMaskIntoConstraints="NO" id="PUX-8q-O72">
-                                                <rect key="frame" x="310" y="0.0" width="199" height="42"/>
+                                                <rect key="frame" x="301" y="0.0" width="217" height="42"/>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10d" translatesAutoresizingMaskIntoConstraints="NO" id="R6k-3M-Vb3">
                                                 <rect key="frame" x="518" y="0.0" width="42" height="42"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalCentering" alignment="center" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="T4t-Dg-jS0">
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="T4t-Dg-jS0">
                                         <rect key="frame" x="0.0" y="42" width="560" height="21"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAt-NS-TUr">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAt-NS-TUr" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="b9O-Ex-A8B"/>
@@ -194,7 +180,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPQ-vB-abg">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="71" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPQ-vB-abg" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                                 <rect key="frame" x="130" y="0.0" width="42" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="noe-jt-akD"/>
@@ -203,7 +189,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v65-Z2-VMR">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v65-Z2-VMR" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                                 <rect key="frame" x="259" y="0.0" width="42" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="Gzg-l9-Byo"/>
@@ -212,7 +198,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="72" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4L-nm-Ch2">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="72" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4L-nm-Ch2" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                                 <rect key="frame" x="389" y="0.0" width="42" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="Bmu-Ue-jD2"/>
@@ -221,7 +207,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="73" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ab-57-r0A">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="73" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ab-57-r0A" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                                 <rect key="frame" x="518" y="0.0" width="42" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="RoE-Hl-eYW"/>
@@ -232,10 +218,10 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4rD-id-i6w">
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="4rD-id-i6w">
                                         <rect key="frame" x="0.0" y="63" width="560" height="16"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kc-Z0-AVv">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kc-Z0-AVv" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="42" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="4oY-Lc-2pM"/>
@@ -244,7 +230,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aI3-o5-bi6">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aI3-o5-bi6" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                                 <rect key="frame" x="130" y="0.0" width="42" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="QJX-gm-ROp"/>
@@ -253,7 +239,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrS-dy-J2g" userLabel="day3">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrS-dy-J2g" userLabel="day3" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                                 <rect key="frame" x="259" y="0.0" width="42" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="R6Z-pA-DvF"/>
@@ -262,7 +248,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVt-Gg-tAE">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AVt-Gg-tAE" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                                 <rect key="frame" x="389" y="0.0" width="42" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="5Mn-9v-Tp1"/>
@@ -271,7 +257,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAW-hs-IjS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="day5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAW-hs-IjS" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                                 <rect key="frame" x="518" y="0.0" width="42" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="4SW-oA-Do4"/>
@@ -285,63 +271,73 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="T4t-Dg-jS0" secondAttribute="trailing" id="6f9-lk-ntW"/>
+                                    <constraint firstAttribute="trailing" secondItem="qmi-yM-siZ" secondAttribute="trailing" id="Anz-X2-mI8"/>
+                                    <constraint firstItem="T4t-Dg-jS0" firstAttribute="top" secondItem="qmi-yM-siZ" secondAttribute="bottom" id="Feg-FX-ETw"/>
                                     <constraint firstItem="4rD-id-i6w" firstAttribute="leading" secondItem="Ajo-R6-w4m" secondAttribute="leading" id="IEK-8T-OCd"/>
+                                    <constraint firstItem="qmi-yM-siZ" firstAttribute="leading" secondItem="Ajo-R6-w4m" secondAttribute="leading" id="Rtf-Yr-ZNj"/>
                                     <constraint firstItem="T4t-Dg-jS0" firstAttribute="leading" secondItem="Ajo-R6-w4m" secondAttribute="leading" id="bY9-nP-Z7b"/>
                                     <constraint firstAttribute="trailing" secondItem="4rD-id-i6w" secondAttribute="trailing" id="fsD-5j-fZA"/>
+                                    <constraint firstItem="qmi-yM-siZ" firstAttribute="top" secondItem="Ajo-R6-w4m" secondAttribute="top" id="wcC-wv-VbW"/>
                                 </constraints>
                             </stackView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nightLightningCloud" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-l7-v95">
-                                <rect key="frame" x="47" y="121" width="506" height="412"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="10d" translatesAutoresizingMaskIntoConstraints="NO" id="hwC-l7-v95">
+                                <rect key="frame" x="40" y="121" width="520" height="415"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="V1y-hI-tjL">
+                                <rect key="frame" x="20" y="488" width="560" height="2"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="c6m-gE-m7c" firstAttribute="top" secondItem="hwC-l7-v95" secondAttribute="bottom" constant="-55" id="2MA-Hd-NkN"/>
+                            <constraint firstItem="Ajo-R6-w4m" firstAttribute="top" secondItem="Msi-1z-STx" secondAttribute="bottom" constant="28" id="00o-Lh-gyD"/>
+                            <constraint firstAttribute="bottom" secondItem="rFZ-Bf-4kt" secondAttribute="bottom" id="251-8g-cj3"/>
                             <constraint firstItem="ebE-3t-B1I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="62" id="2gc-1B-lSq"/>
-                            <constraint firstItem="c6m-gE-m7c" firstAttribute="top" secondItem="Yyg-pT-PE6" secondAttribute="bottom" constant="8" id="3hv-CY-3z3"/>
-                            <constraint firstItem="43t-vC-4uk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4Kb-5V-8bS"/>
                             <constraint firstItem="vNg-zQ-YGa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="5pv-Ht-XgH"/>
-                            <constraint firstItem="c6m-gE-m7c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6e4-TX-KeN"/>
-                            <constraint firstItem="xBq-aJ-Dpi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6pM-xp-RVw"/>
-                            <constraint firstItem="oAv-al-7dL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7gw-rY-W6v"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7Se-GK-m3Z" secondAttribute="trailing" constant="31" id="7lA-4N-5jE"/>
+                            <constraint firstItem="Ajo-R6-w4m" firstAttribute="top" secondItem="xBq-aJ-Dpi" secondAttribute="bottom" constant="39" id="6r8-B4-aZA"/>
+                            <constraint firstItem="Msi-1z-STx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7jz-v0-zEO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Se-GK-m3Z" secondAttribute="trailing" constant="42" id="7lA-4N-5jE"/>
                             <constraint firstItem="7JK-MA-g6e" firstAttribute="top" secondItem="vNg-zQ-YGa" secondAttribute="bottom" constant="8" id="97j-Nw-Dw0"/>
                             <constraint firstItem="Suo-Qg-cJB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9j6-da-Ajs"/>
-                            <constraint firstItem="jnK-jy-IRx" firstAttribute="top" secondItem="7JK-MA-g6e" secondAttribute="bottom" constant="27" id="AZ5-Yf-arX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BKu-Xt-rUw" secondAttribute="trailing" constant="1" id="D7y-jG-y9A"/>
                             <constraint firstItem="Ajo-R6-w4m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DXR-dc-aoG"/>
-                            <constraint firstItem="c6m-gE-m7c" firstAttribute="top" secondItem="43t-vC-4uk" secondAttribute="bottom" constant="19" id="FCn-VB-qnX"/>
+                            <constraint firstItem="V1y-hI-tjL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ExX-RY-ess"/>
                             <constraint firstItem="uhC-yk-ghw" firstAttribute="top" secondItem="7JK-MA-g6e" secondAttribute="bottom" constant="8" id="Frs-j8-kyW"/>
-                            <constraint firstItem="c6m-gE-m7c" firstAttribute="top" secondItem="xBq-aJ-Dpi" secondAttribute="bottom" constant="19" id="Ha7-Ra-rIx"/>
-                            <constraint firstItem="rFZ-Bf-4kt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Ind-Wg-m58"/>
+                            <constraint firstItem="rFZ-Bf-4kt" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="Ind-Wg-m58"/>
+                            <constraint firstItem="hwC-l7-v95" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="JFT-VP-erF"/>
                             <constraint firstItem="7JK-MA-g6e" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="JmE-M9-WoY"/>
                             <constraint firstAttribute="trailing" secondItem="rFZ-Bf-4kt" secondAttribute="trailing" id="KMA-67-aWT"/>
-                            <constraint firstItem="Yyg-pT-PE6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="LNz-cg-2y9"/>
-                            <constraint firstItem="jnK-jy-IRx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LUI-A3-LIL"/>
-                            <constraint firstItem="oAv-al-7dL" firstAttribute="top" secondItem="Suo-Qg-cJB" secondAttribute="bottom" constant="12" id="Lij-vO-4T8"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c6m-gE-m7c" secondAttribute="bottom" constant="2" id="Nd1-cm-E6u"/>
+                            <constraint firstItem="Ajo-R6-w4m" firstAttribute="top" secondItem="43t-vC-4uk" secondAttribute="bottom" constant="39" id="MMS-da-Jhr"/>
                             <constraint firstItem="Ajo-R6-w4m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="REq-PM-zju"/>
-                            <constraint firstItem="hwC-l7-v95" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" constant="-27" id="TXx-od-nrW"/>
-                            <constraint firstItem="Msi-1z-STx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="WLI-Ei-TT4"/>
                             <constraint firstItem="rFZ-Bf-4kt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="XXO-yr-2xn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ajo-R6-w4m" secondAttribute="trailing" id="YM6-FY-d7f"/>
                             <constraint firstItem="Suo-Qg-cJB" firstAttribute="top" secondItem="7JK-MA-g6e" secondAttribute="bottom" constant="8" id="YpA-M8-NMP"/>
-                            <constraint firstItem="c6m-gE-m7c" firstAttribute="top" secondItem="rFZ-Bf-4kt" secondAttribute="bottom" id="Zr6-2E-g6j"/>
-                            <constraint firstItem="hwC-l7-v95" firstAttribute="top" secondItem="vNg-zQ-YGa" secondAttribute="bottom" constant="63" id="a66-HE-mbP"/>
                             <constraint firstItem="uhC-yk-ghw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aDK-Ek-M4P"/>
                             <constraint firstItem="7JK-MA-g6e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aIp-Tv-zO8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ajo-R6-w4m" secondAttribute="bottom" constant="20" id="aUN-x0-0Lf"/>
                             <constraint firstItem="BKu-Xt-rUw" firstAttribute="top" secondItem="7JK-MA-g6e" secondAttribute="bottom" constant="45" id="aVo-gI-9KL"/>
-                            <constraint firstItem="c6m-gE-m7c" firstAttribute="top" secondItem="Msi-1z-STx" secondAttribute="bottom" constant="8" id="caF-bl-o2r"/>
-                            <constraint firstAttribute="trailing" secondItem="c6m-gE-m7c" secondAttribute="trailing" id="cek-7J-I0a"/>
+                            <constraint firstItem="hwC-l7-v95" firstAttribute="top" secondItem="uhC-yk-ghw" secondAttribute="top" id="c4o-mo-ekp"/>
                             <constraint firstItem="7JK-MA-g6e" firstAttribute="top" secondItem="vNg-zQ-YGa" secondAttribute="bottom" constant="8" id="dBa-6e-bUV"/>
-                            <constraint firstItem="tub-NG-eZQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eI4-BD-tv7"/>
-                            <constraint firstItem="hwC-l7-v95" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="27" id="fH4-pD-8z4"/>
+                            <constraint firstItem="Ajo-R6-w4m" firstAttribute="top" secondItem="V1y-hI-tjL" secondAttribute="bottom" constant="11" id="eEj-ZY-D7x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hwC-l7-v95" secondAttribute="trailing" constant="20" id="ejN-bZ-Rhp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ajo-R6-w4m" secondAttribute="bottom" constant="20" id="fUM-5o-xtu"/>
+                            <constraint firstItem="V1y-hI-tjL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="g9Q-hk-UOl"/>
+                            <constraint firstItem="V1y-hI-tjL" firstAttribute="top" secondItem="Yyg-pT-PE6" secondAttribute="bottom" constant="15" id="gpZ-Pl-sF6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ebE-3t-B1I" secondAttribute="trailing" constant="-20" id="i2L-rp-Mgj"/>
+                            <constraint firstItem="jnK-jy-IRx" firstAttribute="top" secondItem="7JK-MA-g6e" secondAttribute="bottom" constant="27" id="klt-dy-WqW"/>
+                            <constraint firstItem="tub-NG-eZQ" firstAttribute="top" secondItem="Suo-Qg-cJB" secondAttribute="bottom" constant="28" id="lLk-zv-ozo"/>
+                            <constraint firstItem="oAv-al-7dL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lWZ-bt-NDF"/>
                             <constraint firstItem="7Se-GK-m3Z" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="69" id="mUA-Ya-zwk"/>
                             <constraint firstItem="vNg-zQ-YGa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mc2-fD-NvE"/>
-                            <constraint firstItem="tub-NG-eZQ" firstAttribute="top" secondItem="Suo-Qg-cJB" secondAttribute="bottom" constant="28" id="yS0-gZ-ce2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hwC-l7-v95" secondAttribute="bottom" constant="64" id="nFW-0z-cKQ"/>
+                            <constraint firstItem="43t-vC-4uk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="p8R-sV-GEb"/>
+                            <constraint firstItem="jnK-jy-IRx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pSg-Sw-LBY"/>
+                            <constraint firstItem="tub-NG-eZQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pag-DS-9dB"/>
+                            <constraint firstItem="hwC-l7-v95" firstAttribute="centerX" secondItem="uhC-yk-ghw" secondAttribute="centerX" id="pg0-Jg-pG5"/>
+                            <constraint firstItem="xBq-aJ-Dpi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qTu-97-aq0"/>
+                            <constraint firstItem="Yyg-pT-PE6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="r4v-3Y-J7X"/>
+                            <constraint firstItem="Ajo-R6-w4m" firstAttribute="top" secondItem="Yyg-pT-PE6" secondAttribute="bottom" constant="28" id="rhW-Gp-mdk"/>
+                            <constraint firstItem="oAv-al-7dL" firstAttribute="top" secondItem="Suo-Qg-cJB" secondAttribute="bottom" constant="12" id="zMX-wA-dyB"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -372,7 +368,6 @@
                         <outlet property="locationInputText" destination="vNg-zQ-YGa" id="46o-YL-Nlr"/>
                         <outlet property="locationNameLabel" destination="7JK-MA-g6e" id="3tL-dQ-si8"/>
                         <outlet property="longDescriptionLabel" destination="uhC-yk-ghw" id="cSd-Mw-kzJ"/>
-                        <outlet property="lowerBG" destination="c6m-gE-m7c" id="Bi7-9e-9ly"/>
                         <outlet property="mainWeatherIcon" destination="hwC-l7-v95" id="bLL-7W-DM0"/>
                         <outlet property="shortDescriptionLabel" destination="BKu-Xt-rUw" id="Rfl-rC-e3t"/>
                         <outlet property="sunriseLabel" destination="xBq-aJ-Dpi" id="daY-JY-cNT"/>
@@ -394,6 +389,5 @@
         <image name="10d" width="700" height="700"/>
         <image name="lowTemp" width="700" height="700"/>
         <image name="niceWeather" width="3024" height="4032"/>
-        <image name="nightLightningCloud" width="700" height="700"/>
     </resources>
 </document>

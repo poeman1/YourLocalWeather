@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -83,14 +83,14 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBq-aJ-Dpi" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
-                                <rect key="frame" x="20" y="428" width="26" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xBq-aJ-Dpi" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
+                                <rect key="frame" x="20" y="449" width="26" height="13"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43t-vC-4uk" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
-                                <rect key="frame" x="554" y="428" width="26" height="34"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43t-vC-4uk" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
+                                <rect key="frame" x="554" y="449" width="26" height="13"/>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -287,6 +287,16 @@
                                 <rect key="frame" x="20" y="488" width="560" height="2"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit openweathermap.org &amp; thenounproject.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hyb-BY-10U">
+                                <rect key="frame" x="181" y="471" width="239" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="239" id="Nev-pB-nTX"/>
+                                    <constraint firstAttribute="height" constant="14" id="yhd-zE-ofJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -323,6 +333,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ajo-R6-w4m" secondAttribute="bottom" constant="20" id="fUM-5o-xtu"/>
                             <constraint firstItem="V1y-hI-tjL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="g9Q-hk-UOl"/>
                             <constraint firstItem="V1y-hI-tjL" firstAttribute="top" secondItem="Yyg-pT-PE6" secondAttribute="bottom" constant="15" id="gpZ-Pl-sF6"/>
+                            <constraint firstItem="V1y-hI-tjL" firstAttribute="top" secondItem="Hyb-BY-10U" secondAttribute="bottom" constant="3" id="hIJ-jh-DWf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ebE-3t-B1I" secondAttribute="trailing" constant="-20" id="i2L-rp-Mgj"/>
                             <constraint firstItem="jnK-jy-IRx" firstAttribute="top" secondItem="7JK-MA-g6e" secondAttribute="bottom" constant="27" id="klt-dy-WqW"/>
                             <constraint firstItem="tub-NG-eZQ" firstAttribute="top" secondItem="Suo-Qg-cJB" secondAttribute="bottom" constant="28" id="lLk-zv-ozo"/>
@@ -337,6 +348,7 @@
                             <constraint firstItem="xBq-aJ-Dpi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qTu-97-aq0"/>
                             <constraint firstItem="Yyg-pT-PE6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="r4v-3Y-J7X"/>
                             <constraint firstItem="Ajo-R6-w4m" firstAttribute="top" secondItem="Yyg-pT-PE6" secondAttribute="bottom" constant="28" id="rhW-Gp-mdk"/>
+                            <constraint firstItem="Hyb-BY-10U" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tPA-Ln-11p"/>
                             <constraint firstItem="oAv-al-7dL" firstAttribute="top" secondItem="Suo-Qg-cJB" secondAttribute="bottom" constant="12" id="zMX-wA-dyB"/>
                         </constraints>
                         <variation key="default">

@@ -406,7 +406,7 @@ class Weather {
                     let result = response.result
                     
                     if let dict = result.value as? Dictionary<String, AnyObject> {
-                        
+                        print(dict)
                         if let forecast = dict["list"] as? [Dictionary<String,AnyObject>] {
 
 

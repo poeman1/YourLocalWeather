@@ -60,6 +60,8 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         locationManager.requestWhenInUseAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationInputText.delegate = self
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.startLocation), name:
+            UIApplicationWillEnterForegroundNotification, object: nil)
         
         weather.downloadWeather { () -> () in
             
@@ -155,6 +157,10 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     }
     
     override func viewWillAppear(animated: Bool) {
+        locationManager.startUpdatingLocation()
+    }
+    
+    func startLocation() {
         locationManager.startUpdatingLocation()
     }
     

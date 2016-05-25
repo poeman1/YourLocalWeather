@@ -11,6 +11,7 @@
 		B0322D521CDE9DF700E3F735 /* customUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0322D511CDE9DF700E3F735 /* customUILabel.swift */; };
 		B0334CD41CC9AB0500181CAE /* weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0334CD31CC9AB0500181CAE /* weather.swift */; };
 		B0334CD61CC9B70D00181CAE /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0334CD51CC9B70D00181CAE /* constants.swift */; };
+		B039A4211CF53DF4009F46D1 /* customImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B039A4201CF53DF4009F46D1 /* customImage.swift */; };
 		B0689B091CC6F17900772EE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0689B081CC6F17900772EE8 /* AppDelegate.swift */; };
 		B0689B0B1CC6F17900772EE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0689B0A1CC6F17900772EE8 /* ViewController.swift */; };
 		B0689B0E1CC6F17900772EE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0689B0C1CC6F17900772EE8 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		B0322D511CDE9DF700E3F735 /* customUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customUILabel.swift; sourceTree = "<group>"; };
 		B0334CD31CC9AB0500181CAE /* weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = weather.swift; sourceTree = "<group>"; };
 		B0334CD51CC9B70D00181CAE /* constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
+		B039A4201CF53DF4009F46D1 /* customImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = customImage.swift; sourceTree = "<group>"; };
 		B0689B051CC6F17900772EE8 /* YourLocalWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourLocalWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0689B081CC6F17900772EE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0689B0A1CC6F17900772EE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				B0334CD51CC9B70D00181CAE /* constants.swift */,
 				B0C89E841CDE8B8300D3E660 /* customUITextField.swift */,
 				B0322D511CDE9DF700E3F735 /* customUILabel.swift */,
+				B039A4201CF53DF4009F46D1 /* customImage.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			files = (
 				B0C89E851CDE8B8300D3E660 /* customUITextField.swift in Sources */,
 				B0322D521CDE9DF700E3F735 /* customUILabel.swift in Sources */,
+				B039A4211CF53DF4009F46D1 /* customImage.swift in Sources */,
 				B0334CD41CC9AB0500181CAE /* weather.swift in Sources */,
 				B0689B0B1CC6F17900772EE8 /* ViewController.swift in Sources */,
 				B0689B091CC6F17900772EE8 /* AppDelegate.swift in Sources */,

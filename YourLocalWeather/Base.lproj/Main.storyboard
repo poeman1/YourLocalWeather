@@ -29,7 +29,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cupertino" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JK-MA-g6e" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7JK-MA-g6e" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
                                 <rect key="frame" x="20" y="66" width="560" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="u0i-cW-NMR"/>
@@ -95,15 +95,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKu-Xt-rUw" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
-                                <rect key="frame" x="533" y="158" width="46" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="8Pf-CL-EcX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ajo-R6-w4m">
                                 <rect key="frame" x="20" y="501" width="560" height="79"/>
                                 <subviews>
@@ -118,7 +109,7 @@
                                                     <constraint firstAttribute="height" constant="42" id="jDp-N8-d6c"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="02d" translatesAutoresizingMaskIntoConstraints="NO" id="n61-5S-QAe" customClass="customImage" customModule="YourLocalWeather" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02d" translatesAutoresizingMaskIntoConstraints="NO" id="n61-5S-QAe" customClass="customImage" customModule="YourLocalWeather" customModuleProvider="target">
                                                 <rect key="frame" x="130" y="0.0" width="42" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="cAD-kP-ZyT"/>
@@ -130,7 +121,7 @@
                                                     <constraint firstAttribute="width" constant="42" id="ek9-cx-EV7"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="04d" translatesAutoresizingMaskIntoConstraints="NO" id="PUX-8q-O72" customClass="customImage" customModule="YourLocalWeather" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="04d" translatesAutoresizingMaskIntoConstraints="NO" id="PUX-8q-O72" customClass="customImage" customModule="YourLocalWeather" customModuleProvider="target">
                                                 <rect key="frame" x="389" y="0.0" width="42" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="42" id="9ZO-jm-DHA"/>
@@ -304,12 +295,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lowTemp" translatesAutoresizingMaskIntoConstraints="NO" id="7Se-GK-m3Z" customClass="customImage" customModule="YourLocalWeather" customModuleProvider="target">
-                                <rect key="frame" x="501" y="184" width="94" height="94"/>
+                                <rect key="frame" x="506" y="184" width="94" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="94" id="9sq-aL-5XI"/>
                                     <constraint firstAttribute="height" constant="94" id="BKD-RY-5mz"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKu-Xt-rUw" customClass="customUILabel" customModule="YourLocalWeather" customModuleProvider="target">
+                                <rect key="frame" x="506" y="163" width="94" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="8Pf-CL-EcX"/>
+                                    <constraint firstAttribute="width" constant="94" id="B9p-KY-fEu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -321,12 +322,12 @@
                             <constraint firstItem="vNg-zQ-YGa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="5pv-Ht-XgH"/>
                             <constraint firstItem="Ajo-R6-w4m" firstAttribute="top" secondItem="xBq-aJ-Dpi" secondAttribute="bottom" constant="57" id="6r8-B4-aZA"/>
                             <constraint firstItem="Msi-1z-STx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="7jz-v0-zEO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="7Se-GK-m3Z" secondAttribute="trailing" constant="-15" id="7lA-4N-5jE">
+                            <constraint firstAttribute="trailingMargin" secondItem="7Se-GK-m3Z" secondAttribute="trailing" constant="-20" id="7lA-4N-5jE">
                                 <variation key="heightClass=compact" constant="41"/>
                             </constraint>
                             <constraint firstItem="7JK-MA-g6e" firstAttribute="top" secondItem="vNg-zQ-YGa" secondAttribute="bottom" constant="8" id="97j-Nw-Dw0"/>
                             <constraint firstItem="Suo-Qg-cJB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9j6-da-Ajs"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BKu-Xt-rUw" secondAttribute="trailing" constant="1" id="D7y-jG-y9A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BKu-Xt-rUw" secondAttribute="trailing" constant="-20" id="D7y-jG-y9A"/>
                             <constraint firstItem="Ajo-R6-w4m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DXR-dc-aoG"/>
                             <constraint firstItem="V1y-hI-tjL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ExX-RY-ess"/>
                             <constraint firstItem="uhC-yk-ghw" firstAttribute="top" secondItem="7JK-MA-g6e" secondAttribute="bottom" constant="8" id="Frs-j8-kyW"/>
@@ -344,7 +345,7 @@
                             <constraint firstItem="uhC-yk-ghw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aDK-Ek-M4P"/>
                             <constraint firstItem="7JK-MA-g6e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="aIp-Tv-zO8"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ajo-R6-w4m" secondAttribute="bottom" constant="20" id="aUN-x0-0Lf"/>
-                            <constraint firstItem="BKu-Xt-rUw" firstAttribute="top" secondItem="7JK-MA-g6e" secondAttribute="bottom" constant="45" id="aVo-gI-9KL">
+                            <constraint firstItem="BKu-Xt-rUw" firstAttribute="top" secondItem="7JK-MA-g6e" secondAttribute="bottom" constant="50" id="aVo-gI-9KL">
                                 <variation key="heightClass=compact" constant="-10"/>
                             </constraint>
                             <constraint firstItem="hwC-l7-v95" firstAttribute="top" secondItem="uhC-yk-ghw" secondAttribute="top" id="c4o-mo-ekp"/>
